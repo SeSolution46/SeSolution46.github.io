@@ -5,16 +5,244 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usato Garantito - SeSolution</title>
     <style>
-        /* Stili specifici per la pagina dell'usato garantito */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+        
+        .main-nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .main-nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        main {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin: 0;
+            margin-top: 40px;
+        }
+        
+        .submenu {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .submenu a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .cart {
+            margin-top: 40px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        
+        .product {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        
+        .product img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+        
+        .product-info {
+            flex-grow: 1;
+        }
+        
+        .product-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .product-price {
+            font-size: 16px;
+            color: #888;
+        }
+        
+        .add-to-cart {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
     </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4983748657475432"
+     crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <h1>SeSolution</h1>
     </header>
     
+    <div class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="servizi.html">Servizi</a>
+        <a href="contatti.html">Contatti</a>
+        <a href="recensioni.html">Recensioni</a>
+        <a href="lavori.html">I Nostri Lavori</a>
+        <a href="usato.html">Usato Garantito</a>
+    </div>
+    
     <main>
-        <!-- Contenuto della pagina dell'usato garantito -->
+        <h2>Usato Garantito</h2>
+        
+        <div class="submenu">
+            <a href="#pc">PC</a>
+            <a href="#smartphone">Smartphone</a>
+            <a href="#tablet">Tablet</a>
+            <!-- Aggiungi altri link per le sottosezioni -->
+        </div>
+        
+        <div id="pc" class="cart">
+            <div class="product">
+                <img src="pc1.jpg" alt="PC 1">
+                <div class="product-info">
+                    <h3 class="product-title">PC Desktop</h3>
+                    <p class="product-price">Prezzo: €XX.XX</p>
+                    <button class="add-to-cart">Aggiungi al carrello</button>
+                </div>
+            </div>
+            
+            <div class="product">
+                <img src="pc2.jpg" alt="PC 2">
+                <div class="product-info">
+                    <h3 class="product-title">PC Portatile</h3>
+                    <p class="product-price">Prezzo: €XX.XX</p>
+                    <button class="add-to-cart">Aggiungi al carrello</button>
+                </div>
+            </div>
+            
+            <!-- Aggiungi qui altri prodotti PC -->
+        </div>
+        
+        <div id="smartphone" class="cart">
+            <div class="product">
+                <img src="smartphone1.jpg" alt="Smartphone 1">
+                <div class="product-info">
+                    <h3 class="product-title">Smartphone</h3>
+                    <p class="product-price">Prezzo: €XX.XX</p>
+                    <button class="add-to-cart">Aggiungi al carrello</button>
+                </div>
+            </div>
+            
+            <!-- Aggiungi qui altri prodotti Smartphone -->
+        </div>
+        
+        <div id="tablet" class="cart">
+            <div class="product">
+                <img src="tablet1.jpg" alt="Tablet 1">
+                <div class="product-info">
+                    <h3 class="product-title">Tablet</h3>
+                    <p class="product-price">Prezzo: €XX.XX</p>
+                    <button class="add-to-cart">Aggiungi al carrello</button>
+                </div>
+            </div>
+            
+            <!-- Aggiungi qui altri prodotti Tablet -->
+        </div>
+        
+        <!-- Aggiungi altre sottosezioni -->
+        
+
+   <!-- Carrello -->
+    <aside id="cart-sidebar">
+        <h3>Carrello</h3>
+        <ul id="cart-items"></ul>
+        <div id="cart-total">Totale: €0.00</div>
+        <button id="checkout-btn">Checkout</button>
+    </aside>
+
+    <!-- Script JavaScript per gestire il carrello -->
+    <script>
+        // Funzione per aggiungere un prodotto al carrello
+        function addToCart(product) {
+            // Aggiungi il prodotto al carrello (puoi salvare i prodotti in un array o un oggetto)
+            // Aggiorna la visualizzazione del carrello
+            updateCart();
+        }
+
+        // Funzione per aggiornare la visualizzazione del carrello
+        function updateCart() {
+            // Ottieni l'elemento HTML del carrello
+            var cartItemsElement = document.getElementById("cart-items");
+            // Ottieni il totale del carrello
+            var cartTotalElement = document.getElementById("cart-total");
+
+            // Svuota il contenuto precedente del carrello
+            cartItemsElement.innerHTML = "";
+
+            // Calcola il totale del carrello
+            var cartTotal = 0;
+
+            // Cicla attraverso i prodotti nel carrello e crea gli elementi HTML per ciascun prodotto
+            // Aggiungi il prodotto al carrello
+
+            // Aggiorna il totale del carrello nell'elemento HTML
+            cartTotalElement.textContent = "Totale: €" + cartTotal.toFixed(2);
+        }
+
+        // Funzione per gestire il click sul pulsante "Aggiungi al carrello"
+        function handleAddToCartClick(event) {
+            // Ottieni il prodotto associato al pulsante
+            var product = event.target.parentNode;
+
+            // Aggiungi il prodotto al carrello
+            addToCart(product);
+        }
+
+        // Aggiungi l'evento di click a tutti i pulsanti "Aggiungi al carrello"
+        var addToCartButtons = document.querySelectorAll(".add-to-cart");
+        for (var i = 0; i < addToCartButtons.length; i++) {
+            addToCartButtons[i].addEventListener("click", handleAddToCartClick);
+        }
+        </script>
     </main>
     
     <footer>
